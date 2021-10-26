@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block 'head' %}
+    <style>
+        #id_nome{
+            border:1px solid red;
+
+        }
+
+        #id_idade{
+            border: 2px solid blue;
+        }
+
+
+    </style>
+
+
+{% endblock %}
+
+{% block 'conteudo' %}
+<br>
+
+<div class="container">
+    <h1>Você está no sistema</h1>
+    <form action="{% url 'home' %}" method="POST">{% csrf_token %}
+        <input type="text" placeholder="numeracao" name="num">
+    
+        {{ form.as_p }}
+
+        <input type="submit" class="btn btn-success">
+
+
+    </form>
+
+
+    
+</div>
+
+{% endblock %}
